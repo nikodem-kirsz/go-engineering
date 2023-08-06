@@ -1,4 +1,4 @@
-package mutexes
+package main
 
 import (
 	"fmt"
@@ -40,8 +40,10 @@ func (rw *SimpleRWMutex) Unlock() {
 	rw.mu.Unlock()
 }
 
-func RWMutexTest() {
+func main() {
 	// RWMutex
+	fmt.Println("Running 100 concurrent go routines updating counter with custom mutex implemantation")
+
 	var (
 		rwMutex SimpleRWMutex
 		wg      sync.WaitGroup

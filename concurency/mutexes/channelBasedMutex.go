@@ -1,4 +1,4 @@
-package mutexes
+package main
 
 import (
 	"fmt"
@@ -23,7 +23,9 @@ func (c *Container) inc(name string) {
 	<-c.mutex // Rekease tge mutex, allowing to next goroutine to acquire it
 }
 
-func ChannelMutexTest() {
+func main() {
+	fmt.Println("Running 3 concurrent go routines updating map key value pairs with channel mutex.")
+
 	c := NewContainer()
 
 	var wg sync.WaitGroup
