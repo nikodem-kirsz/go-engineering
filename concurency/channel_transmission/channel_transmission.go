@@ -1,4 +1,4 @@
-package channel_transmission
+package main
 
 import (
 	"fmt"
@@ -42,6 +42,7 @@ func main() {
 	// 	}
 	// }
 
+	// stops listening on channel when buffer is full
 	jobs := make(chan int, 100)
 	results := make(chan int, 100)
 
