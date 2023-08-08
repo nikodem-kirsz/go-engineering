@@ -61,6 +61,10 @@ func main() {
 			rwMutex.RUnlock()
 
 			rwMutex.Lock()
+
+			rwMutex.RLock()
+			fmt.Println("Current value: ", counter)
+			rwMutex.RUnlock()
 			counter++
 			rwMutex.Unlock()
 		}()

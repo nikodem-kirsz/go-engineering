@@ -20,7 +20,7 @@ func main() {
 		fmt.Println(msg2.str)
 
 		fmt.Println(<-msg1.block) // reset channel, stop blocking
-		fmt.Println(<-msg2.block)
+		// fmt.Println(<-msg2.block)
 	}
 }
 
@@ -36,7 +36,7 @@ func fanIn(ch1, ch2 <-chan Message) <-chan Message { // receives two read-only c
 		for {
 			new_ch <- <-ch2
 		}
-	}()	
+	}()
 	return new_ch
 }
 
@@ -52,3 +52,7 @@ func generator(msg string) <-chan Message { // returns receive-only channel
 	}()
 	return ch
 }
+
+// func gen(msg string) <-chan Message {
+
+// }
