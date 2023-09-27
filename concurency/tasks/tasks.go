@@ -29,6 +29,8 @@ func main() {
 			fmt.Printf("Incremented current counter: %v\n", counter)
 			rwMutex.RUnlock()
 			fmt.Println()
+
+			rwMutex.RLocker()
 		}()
 	}
 
